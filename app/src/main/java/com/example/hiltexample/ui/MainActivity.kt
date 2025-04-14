@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     private val viewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.quote.collect {
-                    binding.tvQuote.text = it?.text
-                    binding.tvAuthor.text = it?.author
+                    binding.tvQuote.text = it?.title
+                    binding.tvAuthor.text = it?.body
                 }
             }
         }
