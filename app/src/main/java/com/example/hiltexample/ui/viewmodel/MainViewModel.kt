@@ -11,5 +11,5 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val fakeRepository: FakeRepository
 ) : ViewModel() {
-    val postPagingFlow = fakeRepository.getRandomQuote().cachedIn(viewModelScope)
+    val postPagingFlow = fakeRepository.getPost().cachedIn(viewModelScope)
 }

@@ -11,9 +11,17 @@
         android:id="@+id/rycPosts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:itemCount="8"
+        android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="8"
         tools:listitem="@layout/item_post" />
+
+    <com.example.hiltexample.ui.customview.LabelSwitchView
+        android:id="@+id/notificationSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

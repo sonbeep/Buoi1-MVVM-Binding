@@ -13,12 +13,12 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
+@OptIn(ExperimentalPagingApi::class)
 class FakeRepositoryImpl @Inject constructor(
     private val apiService: APIService,
     private val appDatabase: AppDatabase
 ) : FakeRepository {
-    @OptIn(ExperimentalPagingApi::class)
-    override fun getRandomQuote(): Flow<PagingData<Post>> {
+    override fun getPost(): Flow<PagingData<Post>> {
         return Pager(
             config = PagingConfig(
                 pageSize = 10

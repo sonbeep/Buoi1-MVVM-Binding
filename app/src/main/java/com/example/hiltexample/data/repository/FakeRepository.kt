@@ -5,5 +5,5 @@ import com.example.hiltexample.data.model.Post
 import kotlinx.coroutines.flow.Flow
 
 interface FakeRepository {
-    fun getRandomQuote(): Flow<PagingData<Post>>
+    fun getPost(): Flow<PagingData<Post>>
 }

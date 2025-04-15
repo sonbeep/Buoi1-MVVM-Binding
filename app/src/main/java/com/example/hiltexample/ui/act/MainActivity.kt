@@ -1,6 +1,7 @@
 package com.example.hiltexample.ui.act
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
@@ -27,6 +28,14 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             viewModel.postPagingFlow.collectLatest {
                 adapter.submitData(it)
+            }
+        }
+
+        binding.notificationSwitch.apply {
+            setLabel("Hihahiho")
+            setSwitchChecked(true)
+            setOnSwitchCheckedChangeListener { isChecked ->
+                Toast.makeText(this@MainActivity, "kk $isChecked", Toast.LENGTH_SHORT).show()
             }
         }
     }
